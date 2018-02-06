@@ -1,7 +1,13 @@
 ﻿@model SportsStore.Domain.Entities.Product
 
 <div class="well">
-    <h3>
+
+    <h4 class="visible-xs">
+        <strong>@Model.Name</strong>
+        <span class="pull-right label label-primary">@Model.Price.ToString("c")</span>
+    </h4>
+
+    <h3 class="hidden-xs">
         <strong>@Model.Name</strong>
         <span class="pull-right label label-primary">@Model.Price.ToString("c")</span>
     </h3>
@@ -11,7 +17,8 @@
         <div class="pull-right">
             @Html.HiddenFor(s => s.ProductID)
             @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Dodaj do koszyka" />
+            <input type="submit" class="visible-xs btn btn-success btn-xs" value="Dodaj do koszyka" />
+            <input type="submit" class="hidden-xs btn btn-success" value="Dodaj do koszyka" />
         </div>
     }
 

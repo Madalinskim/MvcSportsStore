@@ -35,6 +35,8 @@ namespace SportsStore.Domain.Concrete
 
         public void ProcessOrder(Cart cart, ShippingDetails shippinginfo)
         {
+            return;
+
             using (var smtpClient = new SmtpClient())
             {
                 smtpClient.EnableSsl = emailSettings.UseSsl;
